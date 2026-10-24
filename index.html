@@ -74,7 +74,7 @@ Agent: We can cut your debt by 70% today.</textarea>
 </footer>
 <script src="src/logic.js"></script>
 <script>
-function download(n,t){var b=new Blob([t],{type:"text/csv;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=n;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},500);}
+function download(n,t,type){var b=new Blob([t],{type:type||"text/csv;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=n;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},500);}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 var L=window.ChatDisclosureLinter,lastLint=null,feedback=[];
 document.getElementById("rules").value=JSON.stringify(L.defaultRules(),null,2);
@@ -91,9 +91,12 @@ function render(){
  html+="</table>";}
  html+="<h3>Aggregate by rule</h3><table><tr><th>Rule</th><th>Found</th><th>Missing</th><th>Prohibited</th></tr>";
  L.aggregate([adj]).forEach(function(a){html+="<tr><td>"+esc(a.label)+"</td><td>"+a.found+"</td><td>"+a.missing+"</td><td>"+a.prohibited+"</td></tr>";});
- html+="</table><button class='btn-dl' id='dl'>Download report CSV</button>";res.innerHTML=html;
+ html+="</table><button class='btn-dl' id='dl'>Download report CSV</button> <button class='btn-dl' id='dlj'>Download report JSON</button> <button class='btn-dl' id='imp'>Import feedback JSON</button><input type='file' id='fbfile' accept='.json,application/json' hidden>";res.innerHTML=html;
  document.querySelectorAll(".btn-ok").forEach(function(b){b.addEventListener("click",function(){var i=Number(b.getAttribute("data-i"));var h=adj.prohibitedHits[i];var reason=document.getElementById("reason"+i).value||"Reviewed in context";feedback.push({ruleId:h.id,line:h.line,reason:reason});render();});});
  document.getElementById("dl").addEventListener("click",function(){download("chat-disclosure-report.csv",L.buildReportCSV(lastLint,feedback));});
+ document.getElementById("dlj").addEventListener("click",function(){download("chat-disclosure-report.json",L.buildReportJSON(lastLint,feedback),"application/json");});
+ document.getElementById("imp").addEventListener("click",function(){document.getElementById("fbfile").click();});
+ document.getElementById("fbfile").addEventListener("change",function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var marks=L.parseFeedbackJSON(r.result);marks.forEach(function(m){if(!feedback.some(function(x){return x.ruleId===m.ruleId&&Number(x.line)===Number(m.line);})){feedback.push(m);}});render();}catch(err){document.getElementById("msg").textContent="Feedback JSON could not be read.";}};r.readAsText(f);});
 }
 document.getElementById("run").addEventListener("click",function(){
  var msg=document.getElementById("msg");msg.textContent="";feedback=[];
