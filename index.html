@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Disclosure Linter: Lint chat transcripts for required debt relief disclosures and prohibited claims, with line level evidence, before QA ever opens the conversation</title>
+<meta name="description" content="Lint chat transcripts for required debt relief disclosures and prohibited claims, with line level evidence, before QA ever opens the conversation.">
+<meta name="keywords" content="chat transcript disclosure checker, debt relief chat QA linter, prohibited claims checker for chats, required disclosure audit tool">
+<meta name="author" content="Amir Hussain">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aamirtechs.github.io/chat-disclosure-linter/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0b1f3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chat Disclosure Linter">
+<meta property="og:description" content="Lint chat transcripts for required debt relief disclosures and prohibited claims, with line level evidence, before QA ever opens the conversation.">
+<meta property="og:url" content="https://aamirtechs.github.io/chat-disclosure-linter/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chat Disclosure Linter">
+<meta name="twitter:description" content="Lint chat transcripts for required debt relief disclosures and prohibited claims, with line level evidence, before QA ever opens the conversation.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Chat Disclosure Linter", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Amir Hussain", "url": "https://aamirtechs.com"}, "url": "https://aamirtechs.github.io/chat-disclosure-linter/"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>:root{--navy:#0b1f3a;--navy2:#122c50;--gold:#d4a72c;--ink:#16233a;--muted:#5a6a84;--line:#e3e9f2;--bg:#f6f8fb;--card:#ffffff}
+*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 20px 36px;text-align:center}
+header h1{font-family:Sora,Arial,sans-serif;font-size:2rem;margin:0 0 10px}header h1 span{color:var(--gold)}
+header p{max-width:680px;margin:0 auto 14px;color:#dbe4f2}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.stats span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px;font-size:.85rem}
+main{max-width:920px;margin:-18px auto 30px;padding:0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 6px 24px rgba(11,31,58,.07)}
+label{display:block;font-weight:700;margin:14px 0 6px;font-size:.92rem}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:130px;font-family:ui-monospace,Menlo,monospace;font-size:.85rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:640px){.row{grid-template-columns:1fr}}
+.btn-run{background:var(--gold);color:var(--navy);border:0;padding:12px 22px;border-radius:9px;font-weight:800;font-size:1rem;cursor:pointer;margin-top:18px}
+.btn-dl{background:var(--navy);color:#fff;border:0;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;margin:10px 8px 0 0}
+.privacy{color:var(--muted);font-size:.88rem;margin-top:14px}
+.disclaimer{background:#fdf3d7;border:1px solid var(--gold);border-radius:10px;padding:14px;margin-top:16px;font-size:.92rem}
+.msg{margin-top:14px;font-weight:700}.err{color:#b3261e}.pass{color:#137333;font-weight:700}.fail{color:#b3261e;font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem}th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}th{background:#eef3fa}
+section.info{max-width:920px;margin:0 auto 30px;padding:0 16px}section.info h2{font-family:Sora,Arial,sans-serif}
+footer{background:var(--navy);color:#cdd9ec;text-align:center;padding:26px 16px;font-size:.9rem}footer a{color:var(--gold)}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.kpis div{background:#eef3fa;border-radius:10px;padding:10px 14px;min-width:120px}.kpis strong{display:block;font-size:1.2rem}
+</style>
+</head>
+<body>
+<header><h1>Chat Disclosure <span>Linter</span></h1><p>Lint chat transcripts for required debt relief disclosures and prohibited claims, with line level evidence, before QA ever opens the conversation.</p><div class="stats"><span>Free</span><span>100% in your browser</span><span>No sign-up</span></div></header>
+<main><div class="card">
+<div class="disclaimer"><strong>Disclaimer:</strong> This is a QA and compliance-support tool, not legal advice. A lint pass does not prove a conversation was compliant, and a flagged line may be acceptable in context. Review flagged lines with your QA and compliance leads.</div>
+<label for="file">Upload .txt or .json transcript</label><input id="file" type="file" accept=".txt,.json,text/plain,application/json">
+<label for="data">Or paste transcript (Agent: and Customer: lines, or a JSON array)</label>
+<textarea id="data">Agent: This chat may be recorded or monitored for quality assurance.
+Agent: This program is not a loan and we are not a lender.
+Agent: Fees are only charged after a debt is settled, and most programs run 24 to 48 months.
+Agent: Settling can affect your credit while debts remain unpaid.
+Customer: Okay, that makes sense.
+Agent: We can cut your debt by 70% today.</textarea>
+<label for="rules">Rule pack (JSON, editable)</label><textarea id="rules" style="min-height:150px"></textarea>
+<button class="btn-run" id="run">Lint transcript</button>
+<p class="privacy">Runs 100% in your browser. Your files never leave this device.</p>
+<div class="msg" id="msg"></div><div id="results"></div>
+</div></main>
+<section class="info"><h2>How it works</h2><ul>
+<li>Paste a transcript or upload a .txt or .json file in LiveChat or Chatwoot style.</li>
+<li>Required disclosures are searched only in agent messages. Customer words never satisfy a disclosure.</li>
+<li>Prohibited patterns are flagged with the line number and the exact quoted line.</li>
+<li>Mark a hit as acceptable in context with a reason when QA judges it fine. It stays listed but leaves the fail count.</li>
+<li>Download the report CSV with required, prohibited, and feedback rows.</li>
+</ul></section>
+<footer>
+<p>Built by Amir Hussain, operations manager and founder of <a href="https://aamirtechs.com" target="_blank" rel="noopener">AamirTechs: operations, customer support and e-commerce services</a>.</p>
+<p><a href="https://github.com/aamirtechs" target="_blank" rel="noopener">More open source tools on GitHub</a></p>
+</footer>
+<script src="src/logic.js"></script>
+<script>
+function download(n,t){var b=new Blob([t],{type:"text/csv;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=n;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},500);}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+var L=window.ChatDisclosureLinter,lastLint=null,feedback=[];
+document.getElementById("rules").value=JSON.stringify(L.defaultRules(),null,2);
+document.getElementById("file").addEventListener("change",function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){document.getElementById("data").value=r.result;};r.readAsText(f);});
+function render(){
+ if(!lastLint)return;var adj=L.applyFeedback(lastLint,feedback);var res=document.getElementById("results");
+ var html='<div class="kpis"><div><strong>'+adj.score.requiredFound+"/"+adj.score.requiredTotal+'</strong>required found</div><div><strong>'+adj.score.prohibitedHits+'</strong>active prohibited hits</div><div><strong>'+(adj.score.pass?"Pass":"Review")+'</strong>score</div></div>';
+ html+="<h3>Required disclosures</h3><table><tr><th>Rule</th><th>Status</th><th>Line</th><th>Evidence</th></tr>";
+ adj.requiredResults.forEach(function(r){html+="<tr><td>"+esc(r.label)+"</td><td class='"+(r.found?"pass":"fail")+"'>"+(r.found?"found":"missing")+"</td><td>"+(r.line||"")+"</td><td>"+esc(r.evidence)+"</td></tr>";});
+ html+="</table><h3>Prohibited hits</h3>";
+ if(!adj.prohibitedHits.length)html+="<p>No prohibited hits.</p>";else{
+ html+="<table><tr><th>Rule</th><th>Line</th><th>Evidence quote</th><th>Feedback</th></tr>";
+ adj.prohibitedHits.forEach(function(h,i){html+="<tr><td>"+esc(h.label)+"</td><td>"+h.line+"</td><td>"+esc(h.evidence)+"</td><td>"+(h.acceptable?"Acceptable: "+esc(h.reason):"<input id='reason"+i+"' placeholder='Reason'> <button data-i='"+i+"' class='btn-ok'>Mark acceptable</button>")+"</td></tr>";});
+ html+="</table>";}
+ html+="<h3>Aggregate by rule</h3><table><tr><th>Rule</th><th>Found</th><th>Missing</th><th>Prohibited</th></tr>";
+ L.aggregate([adj]).forEach(function(a){html+="<tr><td>"+esc(a.label)+"</td><td>"+a.found+"</td><td>"+a.missing+"</td><td>"+a.prohibited+"</td></tr>";});
+ html+="</table><button class='btn-dl' id='dl'>Download report CSV</button>";res.innerHTML=html;
+ document.querySelectorAll(".btn-ok").forEach(function(b){b.addEventListener("click",function(){var i=Number(b.getAttribute("data-i"));var h=adj.prohibitedHits[i];var reason=document.getElementById("reason"+i).value||"Reviewed in context";feedback.push({ruleId:h.id,line:h.line,reason:reason});render();});});
+ document.getElementById("dl").addEventListener("click",function(){download("chat-disclosure-report.csv",L.buildReportCSV(lastLint,feedback));});
+}
+document.getElementById("run").addEventListener("click",function(){
+ var msg=document.getElementById("msg");msg.textContent="";feedback=[];
+ var rules;try{rules=JSON.parse(document.getElementById("rules").value);}catch(e){msg.textContent="Rule pack is not valid JSON.";msg.className="msg err";return;}
+ var msgs=L.parseInput(document.getElementById("data").value);if(!msgs.length){msg.textContent="No transcript lines found.";msg.className="msg err";return;}
+ lastLint=L.lintConversation(msgs,rules);render();msg.textContent="Linted "+msgs.length+" lines.";
+});
+</script></body></html>
