@@ -65,6 +65,21 @@ function buildReportCSV(lint,feedback){
   adj.prohibitedHits.forEach(h=>rows.push(["prohibited",h.id,h.label,"hit",h.line,h.evidence,h.acceptable?"yes":"",h.reason||""]));
   return rows.map(r=>r.map(csvEscape).join(",")).join("\n")+"\n";
 }
-const api={defaultRules,parseTranscript,parseJSONTranscript,parseInput,matchPattern,lintConversation,applyFeedback,aggregate,buildReportCSV,csvEscape};
+function buildReportJSON(lint,feedback){
+  const adj=feedback?applyFeedback(lint,feedback):lint;
+  return JSON.stringify({
+    version:1,
+    required:adj.requiredResults,
+    prohibited:adj.prohibitedHits,
+    feedback:feedback||[],
+    score:adj.score
+  },null,2);
+}
+function parseFeedbackJSON(text){
+  const data=JSON.parse(text);
+  const list=Array.isArray(data)?data:(data.feedback||data.marks||[]);
+  return list.filter(f=>f&&f.ruleId!=null&&f.line!=null).map(f=>({ruleId:f.ruleId,line:Number(f.line),reason:String(f.reason||"Reviewed in context")}));
+}
+const api={defaultRules,parseTranscript,parseJSONTranscript,parseInput,matchPattern,lintConversation,applyFeedback,aggregate,buildReportCSV,buildReportJSON,parseFeedbackJSON,csvEscape};
 if(typeof module!=="undefined"&&module.exports){module.exports=api;}
 if(typeof window!=="undefined"){window.ChatDisclosureLinter=api;}
